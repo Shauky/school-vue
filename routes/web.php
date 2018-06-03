@@ -13,4 +13,5 @@
 
 Route::group(['middleware' => ['web']], function(){
     Route::get('/', 'AdminController@index')->name('root');
+    Route::get('/school', 'SchoolController@index')->name('root');
 });
