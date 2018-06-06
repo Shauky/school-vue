@@ -86,11 +86,14 @@ class BuildDev extends Command
         $index = str_replace('<meta charset="utf-8">',
             '
             <meta charset="utf-8">
-            <meta name="csrf-token" content="{{ csrf_token() }}">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- CSRF Token -->
+            <meta name="csrf-token" content="{{ csrf_token() }}" />
             <script>
                 window.Laravel = {!! json_encode( [ "csrfToken" => csrf_token() ]) !!}
             </script>
-    </script>
+            <!-- Styles -->
         ', $index);
 
         $appBladePath = resource_path('views' . DIRECTORY_SEPARATOR .'layouts' . DIRECTORY_SEPARATOR .'app.blade.php');

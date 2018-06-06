@@ -2,19 +2,28 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <title>{{ config('app.name', 'WelcometoGems') }}</title>
-    <!-- CSRF token gets inserted here-->
+    <!-- This gets changed -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <script>
+        window.Laravel = {!! json_encode( [ "csrfToken" => csrf_token() ]) !!}
+    </script>
+    <script type="text/javascript" src="/vendor.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
     <!-- Styles -->
     <link href="css/app.css" rel="stylesheet">
-</head>
+    <link rel="shortcut icon" href="/logo.png">
+  </head>
  <body>
    <div id='app'></div>
-   <!-- App begins here -->
    <div id="main">
    <section class="hero is-bold app-navbar animated slideInDown">
      <div class="hero-head">
        <nav class="nav">
-       <div class="nav-left sr-only">Toggle navigation</div>
+       <div class="nav-left">.b</div>
          <div class="nav-center">
            <a href="/" class="nav-item hero-brand">
              <div aria-label="v0.1" class="is-hidden-mobile tooltip--right tooltip--success tooltip--no-animate tooltip--small tooltip--rounded tooltip-always">
@@ -46,23 +55,18 @@
                             </li>
                         </ul>
                     </li>
-              @endif
-           </ul>
+                @endif
+            </ul>
               </div>
             </nav>
            </div>
-     </section>
+         </section>
      <section class="app-main">
-       <div class="container is-fluid is-marginless app-content">
-         <div class="container">
+        <div class="container is-fluid is-marginless app-content">
             @yield('content')
-         </div>
        </div>
      </section>
    </div>
    <!-- Scripts -->
-
-   <!-- Once compiled relocate to head -->
-
   </body>
 </html>

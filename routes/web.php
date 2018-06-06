@@ -12,6 +12,7 @@
 */
 
 Route::group(['middleware' => ['web']], function(){
-    Route::get('/', 'AdminController@index')->name('root');
-    Route::get('/school', 'SchoolController@index')->name('root');
+  Route::get('/', 'AdminController@index')->name('root');
+  Auth::routes();
+  Route::get('/home', 'HomeController@index')->name('home');
 });
